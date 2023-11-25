@@ -62,18 +62,27 @@ export const resume = async (args: string[]): Promise<string> => {
 // `;
 // };
 
-export const skills = async (args: string[]): Promise<string> => {
+export const skills = async (args: string[]): Promise<any> => {
   const skills = config.skills;
   var c = '';
 
-  var data = skills;
-  if(args.length > 0) data =  args;
+  if(args.length > 0)  {
+    for (const type of args) {
 
-  for (const type of data) {
+      c += '\n'+ type+ "".padEnd((21-type.length), " ") +': '+ skills[type];
 
-    c += '\n'+ type+ "".padEnd((21-type.length), " ") +': '+ skills[type];
-
+    }
   }
+
+  else{
+    for (const type in skills) {
+
+      c += '\n'+ type+ "".padEnd((21-type.length), " ") +': '+ skills[type];
+
+    }
+  }
+
+
 
 
 
