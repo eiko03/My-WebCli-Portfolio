@@ -1,0 +1,42 @@
+{
+  "readmeUrl": "https://github.com/eiko03/eiko03/blob/master/README.md",
+  "title": "MyPortfolio",
+  "name": "Tipu Sultan Eiko",
+  "ascii": "Portfolio",
+  "social": {
+    "github": "eiko03",
+    "linkedin": "tipusultaneiko",
+    "stackoverflow": "5315591/tipu-sultan-eiko",
+    "leetcode": "eiko03"
+  },
+  "email": "tipusultan50@gmail.com",
+  "ps1_hostname": "eiko's-portfolio",
+  "ps1_username": "guest",
+  "resume_url": "https://github.com/eiko03/eiko03.github.io/blob/6a453c89a6064ff170964d42de5574a237956acd/img/Resume_TipuSultan.pdf",
+  "skills": {
+    "programming_language": ["PHP","JAVASCRIPT","GOLANG","PYTHON"],
+    "framework": ["Laravel","NodeJS","Django","VueJS"],
+    "database": ["Mysql","Ppostgresql","Mongodb","Casandra"],
+    "tools": ["Linux","AWS","DigitalOcean","Docker","Kubernetes","Redis","Jenkin","SQS","Git"]
+  },
+  "colors": {
+    "light": {
+      "background": "#FBF1C9",
+      "foreground": "#3C3836",
+      "yellow": "#D79921",
+      "green": "#98971A",
+      "gray": "#7C6F64",
+      "blue": "#458588",
+      "red": "#CA2124"
+    },
+    "dark": {
+      "background": "#2E3440",
+      "foreground": "#E5E9F0",
+      "yellow": "#5E81AC",
+      "green": "#A3BE8C",
+      "gray": "#88C0D0",
+      "blue": "#EBCB8B",
+      "red": "#BF616A"
+    }
+  }
+}
