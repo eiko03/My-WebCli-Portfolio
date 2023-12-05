@@ -193,7 +193,7 @@ export const nvim = async (args: string[]): Promise<string> => {
 export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
 };
-export const download = async (args?: string[]): Promise<string> => {
+export const download = async (args?: string[])=> {
   window.open('"https://raw.githubusercontent.com/eiko03/My-WebCli-Portfolio/master/src/port', '_blank');
 };
 
