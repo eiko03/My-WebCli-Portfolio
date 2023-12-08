@@ -3,6 +3,11 @@
 import * as bin from './index';
 import config from '../../../config.json';
 import me from '../../me.jpg'
+import {WinBox} from "../../components/Winbox";
+import {createRoot} from "react-dom/client";
+import {isSpreadAssignment} from "tsutils";
+import App from "next/app";
+import {render} from "react-dom";
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -193,6 +198,12 @@ export const nvim = async (args: string[]): Promise<string> => {
 export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
 };
+
+export const test = async (args?: string[]) => {
+
+  WinboxDisplayMessage('test ddd')
+
+};
 export const download = async (args?: string[])=> {
   window.open('https://raw.githubusercontent.com/eiko03/My-WebCli-Portfolio/master/src/port');
 };
@@ -214,8 +225,26 @@ export const sudo = async (args?: string[]): Promise<string> => {
 };
 
 export const retro = async (args?: string[]) => {
-  window.open('https://eiko03.github.io');
+  WinboxDisplayURL('https://eiko03.github.io');
 };
+
+const WinboxDisplayMessage = (data:string)=>{
+  window.dispatchEvent(new CustomEvent("winboxevent", {
+    detail: {
+      type: config.enums.winbox.type.message,
+      message: data
+    }
+  }))
+}
+const WinboxDisplayURL = (data:string)=>{
+  window.dispatchEvent(new CustomEvent("winboxevent", {
+    detail: {
+      type:config.enums.winbox.type.url,
+      message: data
+    }
+  }))
+}
+
 
 // Banner
 export const banner = (args?: string[]): string => {

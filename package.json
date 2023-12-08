@@ -18,9 +18,12 @@
     "@ts-stack/markdown": "^1.5.0",
     "axios": "^0.27.2",
     "next": "12.1.6",
+    "next-transpile-modules": "^10.0.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-iframe": "^1.8.5",
+    "react-winbox": "^1.5.0"
   },
   "devDependencies": {
     "@types/node": "17.0.32",

@@ -21,6 +21,11 @@ div#__next > div {
   overflow: auto;
 }
 
+.wb-body{
+  background: #2E3440;
+  padding: 2px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

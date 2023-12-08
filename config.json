@@ -38,5 +38,13 @@
       "blue": "#EBCB8B",
       "red": "#BF616A"
     }
+  },
+  "enums": {
+    "winbox": {
+      "type": {
+        "url": "url",
+        "message": "message"
+      }
+    }
   }
 }
