@@ -197,23 +197,23 @@ export const sudo = async (args?: string[]): Promise<string> => {
       JSON.stringify(args) ==JSON.stringify(['rm', '-fr', '/'])  ||
       JSON.stringify(args) ==JSON.stringify(['rm', '-rf', '/'])
   ) {
-    window.open('https://www.youtube.com/watch?v=bTEgpLxZQJs', '_blank');
+    WinboxDisplay(config.enums.winbox.type.youtube,'https://www.youtube.com/embed/bTEgpLxZQJs?si=VJeEB87rhx62ZGpw?controls=0&autoplay=1');
     return  `Nice try... 🌝`;
   }
   else{
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
+    WinboxDisplay(config.enums.winbox.type.youtube,'https://www.youtube.com/embed/dQw4w9WgXcQ?si=DlzVxwG-BfcjvMOl?controls=0&autoplay=1'); // ...I'm sorry
     return `Permission denied: with little power comes... no responsibility? `;
   }
 };
 
 export const readable_portfolio = async (args?: string[]) => {
-  WinboxDisplayURL('https://eiko03.github.io');
+  WinboxDisplay(config.enums.winbox.type.url,'https://eiko03.github.io');
 };
 
 const WinboxDisplayMessage = (data:string)=>{
   window.dispatchEvent(new CustomEvent("winboxevent", {
     detail: {
-      type: config.enums.winbox.type.message,
+      type: config.enums.winbox.type.youtube,
       message: data
     }
   }))
@@ -226,10 +226,10 @@ const WinboxDisplayURL = (data:string)=>{
     }
   }))
 }
-const WinboxDisplayComponent = (data:string)=>{
+const WinboxDisplay = (type:string,data:string)=>{
   window.dispatchEvent(new CustomEvent("winboxevent", {
     detail: {
-      type: config.enums.winbox.type.component,
+      type: type,
       message: data
     }
   }))

@@ -44,7 +44,9 @@
       "type": {
         "url": "url",
         "message": "message",
-        "component": "component"
+        "component": "component",
+        "youtube": "youtube",
+        "linkedin": "linkedin"
       }
     }
   }

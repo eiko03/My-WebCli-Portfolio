@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {WinBox} from "./Winbox";
-import Iframe from "react-iframe";
+import * as IF  from "react-iframe";
 import config from "../../config.json";
 
 
@@ -50,19 +50,39 @@ export const WinboxComponent = () => {
                      width={700}
                      background={"#394050"}
                  >
-                     <Iframe url={winboxData}></Iframe>
+                     <IF url={winboxData}></IF>
                  </WinBox>
              )
          }
-
-         else if(winboxDataType === config.enums.winbox.type.component){
+         else if(winboxDataType === config.enums.winbox.type.youtube){
              return (
                  <WinBox
                      id={"winbox"}
-                     onclose={() =>setWinbox(false)}
+                     onclose={() => setWinbox(false)}
                      x={"center"}
                      y={"center"}
                      height={500}
+                     width={700}
+                     background={"#394050"}
+                 >
+
+                     <iframe width="560" height="315"
+                             src={winboxData}
+                             autoPlay={"1"}
+                             title="YouTube video player" frameBorder="0"
+                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                             allowFullScreen></iframe>
+                 </WinBox>
+             )
+         }
+         else if (winboxDataType === config.enums.winbox.type.component) {
+            return (
+                <WinBox
+                    id={"winbox"}
+                    onclose={() => setWinbox(false)}
+                    x={"center"}
+                    y={"center"}
+                    height={500}
                      width={700}
                      background={"#394050"}
                  >
