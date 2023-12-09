@@ -206,7 +206,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
   }
 };
 
-export const readable_portfolio = async (args?: string[]) => {
+export const portfolio = async (args?: string[]) => {
   WinboxDisplay(config.enums.winbox.type.url,'https://eiko03.github.io');
 };
 
