@@ -43,7 +43,8 @@
     "winbox": {
       "type": {
         "url": "url",
-        "message": "message"
+        "message": "message",
+        "component": "component"
       }
     }
   }

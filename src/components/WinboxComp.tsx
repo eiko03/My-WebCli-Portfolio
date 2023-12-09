@@ -3,24 +3,7 @@ import {WinBox} from "./Winbox";
 import Iframe from "react-iframe";
 import config from "../../config.json";
 
-const IframeComp = ({winboxData})=>{
-    <Iframe url={winboxData}></Iframe>
-}
-const WinBoxSet = ({winboxData, setWinbox}) =>{
-    return (
-        <WinBox
-        id={"winbox"}
-        onclose={() =>setWinbox(false)}
-        x={"center"}
-        y={"center"}
-        height={500}
-        width={700}
-        background={"#394050"}
-    >
-        <Iframe url={winboxData}></Iframe>
-    </WinBox>
-    )
-}
+
 export const WinboxComponent = () => {
 
 
@@ -68,6 +51,22 @@ export const WinboxComponent = () => {
                      background={"#394050"}
                  >
                      <Iframe url={winboxData}></Iframe>
+                 </WinBox>
+             )
+         }
+
+         else if(winboxDataType === config.enums.winbox.type.component){
+             return (
+                 <WinBox
+                     id={"winbox"}
+                     onclose={() =>setWinbox(false)}
+                     x={"center"}
+                     y={"center"}
+                     height={500}
+                     width={700}
+                     background={"#394050"}
+                 >
+
                  </WinBox>
              )
          }

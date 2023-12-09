@@ -3,11 +3,8 @@
 import * as bin from './index';
 import config from '../../../config.json';
 import me from '../../me.jpg'
-import {WinBox} from "../../components/Winbox";
-import {createRoot} from "react-dom/client";
-import {isSpreadAssignment} from "tsutils";
-import App from "next/app";
-import {render} from "react-dom";
+
+
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -18,7 +15,7 @@ export const help = async (args: string[]): Promise<string> => {
     if (i % 7 === 0) {
       c += data + '\n';
     } else {
-      c += data + "".padEnd((15-data.length), " ");
+      c += data + "".padEnd((19-data.length), " ");
     }
   }
   return `Welcome! Here are all the available commands:
@@ -29,11 +26,7 @@ Type 'sumfetch' to display summary.
 `;
 };
 
-// Redirection
-// export const repo = async (args: string[]): Promise<string> => {
-//   window.open(`${config.repo}`);
-//   return 'Opening Github repository...';
-// };
+
 
 // About
 export const about_me = async (args: string[]): Promise<string> => {
@@ -58,14 +51,6 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
-// Donate
-// export const donate = async (args: string[]): Promise<string> => {
-//   return `thank you for your interest.
-// here are the ways you can support my work:
-// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-// `;
-// };
 
 export const skills = async (args: string[]): Promise<any> => {
   const skills = config.skills;
@@ -199,14 +184,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
 };
 
-export const test = async (args?: string[]) => {
-
-  WinboxDisplayMessage('test ddd')
-
-};
 export const download = async (args?: string[])=> {
   window.open('https://raw.githubusercontent.com/eiko03/My-WebCli-Portfolio/master/src/port');
 };
+
+
 
 export const sudo = async (args?: string[]): Promise<string> => {
   if(
@@ -224,7 +206,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
   }
 };
 
-export const retro = async (args?: string[]) => {
+export const readable_portfolio = async (args?: string[]) => {
   WinboxDisplayURL('https://eiko03.github.io');
 };
 
@@ -240,6 +222,14 @@ const WinboxDisplayURL = (data:string)=>{
   window.dispatchEvent(new CustomEvent("winboxevent", {
     detail: {
       type:config.enums.winbox.type.url,
+      message: data
+    }
+  }))
+}
+const WinboxDisplayComponent = (data:string)=>{
+  window.dispatchEvent(new CustomEvent("winboxevent", {
+    detail: {
+      type: config.enums.winbox.type.component,
       message: data
     }
   }))
