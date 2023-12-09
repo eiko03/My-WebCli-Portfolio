@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {WinBox} from "./Winbox";
-import * as IF  from "react-iframe";
+import IFrame  from "react-iframe";
 import config from "../../config.json";
 
 
@@ -50,7 +50,7 @@ export const WinboxComponent = () => {
                      width={700}
                      background={"#394050"}
                  >
-                     <IF url={winboxData}></IF>
+                     <IFrame url={winboxData}></IFrame>
                  </WinBox>
              )
          }
